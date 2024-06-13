@@ -1,5 +1,6 @@
 package org.authenticationservice.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.authenticationservice.dto.VoterCredentials;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,6 @@ public interface VoterFeignClient {
     @PostMapping("/")
     ResponseEntity<VoterCredentials> addVoter(@RequestBody VoterCredentials voterCredentials);
 
-    @GetMapping("/email")
+    @GetMapping("/byEmail")
     ResponseEntity<VoterCredentials> findByEmail(@RequestParam String email);
 }

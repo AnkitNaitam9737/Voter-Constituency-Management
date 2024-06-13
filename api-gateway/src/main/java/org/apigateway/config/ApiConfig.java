@@ -10,10 +10,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableDiscoveryClient
 public class ApiConfig {
 
-    @Bean
-    public RouteLocator customeRouteLocator(RouteLocatorBuilder builder) {
-        return builder.routes().route("VOTER-SERVICE", r -> r.path("/api/voter/**").uri("http://localhost:8081"))
-                .route("CONSTITUENCY-SERVICE", r -> r.path("/api/constituency/**").uri("http://localhost:8082"))
-                .build();
-    }
+//    @Bean
+//    public RouteLocator customeRouteLocator(RouteLocatorBuilder builder) {
+//        return builder.routes().route("VOTER-SERVICE", r -> r.path("/api/voter/**").uri("http://localhost:8081"))
+//                .route("CONSTITUENCY-SERVICE", r -> r.path("/api/constituency/**").uri("http://localhost:8082"))
+//                .build();
+//    }
 }
