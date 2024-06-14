@@ -1,18 +1,24 @@
 spring:
     application:
         name: api-gateway
+
     cloud:
         gateway:
-            mvc:
-                routes:
-                    - id: voter-service
+              routes:
+                    - id: VOTER-SERVICE
                       uri: lb://VOTER-SERVICE
                       predicates:
                           - Path=/api/voter/**
-                    - id: constituency-service
+                      filters:
+                        - AuthenticationFilter
+
+                    - id: CONSTITUENCY-SERVICE
                       uri: lb://CONSTITUENCY-SERVICE
                       predicates:
                           - Path=/api/constituency/**
+                      filters:
+                        - AuthenticationFilter
+
                     - id: authentication-service
                       uri: lb://AUTHENTICATION-SERVICE
                       predicates:

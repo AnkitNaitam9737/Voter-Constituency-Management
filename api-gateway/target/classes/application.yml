@@ -1,11 +1,11 @@
 spring:
     application:
         name: api-gateway
+
     cloud:
         gateway:
-            mvc:
-                routes:
-                    - id: voter-service
+              routes:
+                    - id: VOTER-SERVICE
                       uri: lb://VOTER-SERVICE
                       predicates:
                           - Path=/api/voter/**

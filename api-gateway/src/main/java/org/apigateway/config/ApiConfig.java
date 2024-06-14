@@ -5,6 +5,7 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 @EnableDiscoveryClient
@@ -16,4 +17,8 @@ public class ApiConfig {
 //                .route("CONSTITUENCY-SERVICE", r -> r.path("/api/constituency/**").uri("http://localhost:8082"))
 //                .build();
 //    }
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
